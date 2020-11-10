@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 def parseResults(records):
+    recordsConv = []
     items = records.get('Items') or records.get('Item') or records
 
     if isinstance(items, dict):
@@ -44,5 +45,5 @@ def parseResults(records):
         recordsConv.append(recordConv)
 
     if is_single:
-        recordsConv = recordConv[0]
+        recordsConv = recordsConv[0]
     return recordsConv
