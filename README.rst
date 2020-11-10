@@ -3,7 +3,6 @@ Dynamodb Pretty Parser
 ============================
 
 Parses Dynamodb responses into a more usable format. Results are returned as a list of dictionaries with the attribute names being the key. Results are parsed recursively.
-One use is to return results directly to Appsync from a Lambda function.
 Parses all scalar types that Dynamo supports
 
 * N (number scalar) - cast as integer or Decimal types
@@ -43,7 +42,7 @@ Methods
 
 parseResults(records) -> dict
 Arguments:
-items -- Response from any boto3 call to Dynamodb that returns Items in the response
+items -- Any standard Dynamodb structure
 
 Example
 ----------------------------
