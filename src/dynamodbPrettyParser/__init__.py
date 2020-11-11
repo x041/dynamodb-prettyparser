@@ -11,6 +11,7 @@ def parseResults(records):
         is_single = False
 
     def parseList(dynamoList):
+        dynamoConvList = []
         for d in dynamoList:
             dynamoType = list(d.keys())[0]
             dynamoConvItem = typeMap[dynamoType](d[dynamoType])
@@ -18,6 +19,7 @@ def parseResults(records):
         return dynamoConvList
 
     def parseMap(dynamoMap):
+        dynamoConvMap = {}
         for d in dynamoMap:
             dynamoType = list(dynamoMap[d].keys())[0]
             dynamoConvMap[d] = typeMap[dynamoType](dynamoMap[d][dynamoType])
